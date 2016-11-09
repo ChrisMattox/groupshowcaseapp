@@ -5,9 +5,15 @@ var path = require('path');
 
 // routing modules
 var index = require('./routes/index');
+var bios = require('./routes/bios');
+var likes = require('./routes/likes');
 
 
 // app.use(bodyParser.urlencoded({ extended: true }));
+
+// routes
+app.use('/bios', bios);
+app.use('/likes', likes);
 
 // Static Files
 app.use('/', index);
