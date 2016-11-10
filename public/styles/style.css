@@ -1,38 +1,47 @@
 body {
   text-align: center;
+  background: cyan url('../assets/images/sigmanaut.png') center 10px no-repeat;
+  background-size: 300px;
+  font-family: helvetica, sans-serif;
 }
 
 h1{
-  color: teal;
+  color: yellow;
+  font-weight: bolder;
   font-size: 50px;
   text-align: center;
+  -webkit-text-stroke: 2px black;
 }
 
 h2{
-  color: teal;
+  color: magenta;
   font-size: 40px;
+  -webkit-text-stroke: 1px black;
 }
 
 p {
-  color: orange;
+  color: yellow;
 }
 
 #catContainer {
   display: inline-block;
-  margin: 20px;
+  margin: 40px 20px 20px 20px;
   width: 200px;
 }
 
 #catContainer p {
-  height: 40px;
+  height: 58px;
+  background-color: black;
+  border: 1px solid magenta;
+
 }
 
 button {
   background-color: magenta;
   height: 60px;
-  width: 160px;
+  width: 200px;
   display: block;
-  margin: 0 auto;
+  margin: 15px auto;
 
 }
 
@@ -40,4 +49,8 @@ img {
   height: 200px;
   width: 200px;
   flex-direction: row;
+}
+
+#likeDiv {
+  margin-top: 65px;
 }

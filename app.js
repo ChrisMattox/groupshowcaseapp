@@ -7,7 +7,7 @@ var index = require('./routes/index');
 var bios = require('./routes/bios');
 var likes = require('./routes/likes');
 
-
+//enabling bodyParser
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // routes

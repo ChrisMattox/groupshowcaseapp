@@ -1,5 +1,4 @@
 $(document).ready(function() {
-  console.log('up and running!');
 
 //calling two get requests to post both our bios and our like count to the DOM
 getCoolCats();
@@ -16,7 +15,6 @@ function getCoolCats() {
     type: 'GET',
     url: '/bios',
     success: function(data) {
-      console.log('got em');
       appendCoolCats(data);
     }
   });
@@ -44,14 +42,11 @@ $('#showcase').on('click', '.like-button', function (){
 //reappend the like data to the DOM with another get request
 function likeCoolCat (name) {
   event.preventDefault();
-    console.log(name);
     $.ajax({
       type: 'POST',
       url: '/likes',
       data: name,
       success: function(data){
-        console.log(data);
-        console.log("sending likes");
         getCoolLikes();
       }
     });
@@ -65,7 +60,6 @@ function getCoolLikes() {
     type: 'GET',
     url: '/likes',
     success: function(data) {
-      console.log('i like you');
       appendCoolLikes(data);
     }
   });
@@ -74,9 +68,9 @@ function getCoolLikes() {
 //function to clear out likeDiv, then append like data to the DOM
 function appendCoolLikes(coolLikes) {
   $('#likeDiv').empty();
-  $('#likeDiv').append('<p>Likes 4 Emily: '+ coolLikes["Emily"] +'</p>');
-  $('#likeDiv').append('<p>Likes 4 Chris: '+ coolLikes["Chris"] +'</p>');
-  $('#likeDiv').append('<p>Likes 4 Joe: '+ coolLikes["Joe"] +'</p>');
+  $('#likeDiv').append('<p>Emily has '+ coolLikes["Emily"] + ' likes!</p>');
+  $('#likeDiv').append('<p>Chris has '+ coolLikes["Chris"] +' likes!</p>');
+  $('#likeDiv').append('<p>Joe has '+ coolLikes["Joe"] +' likes!</p>');
 }
 
 });

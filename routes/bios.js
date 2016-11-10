@@ -22,7 +22,7 @@ var coolCats = [
     likes: 0
   }
 ];
-
+//getting our bios and sending them to client side
 router.get('/', function(req, res) {
   console.log('gettin cooler cats');
   res.send(coolCats);
