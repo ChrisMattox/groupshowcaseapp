@@ -25,7 +25,7 @@ function appendCoolCats(coolCats) {
   $('#showcase').empty();
 
   for (var i = 0; i < coolCats.length; i++) {
-    $('#showcase').append('<div id="catContainer"><h2>' + coolCats[i].name + '</h2><p>' + coolCats[i].bio + '</p>' + '<img src="' + coolCats[i].image + '"><button class="like-button" id="' + coolCats[i].name + '">Like ' + coolCats[i].name +'</button></div>');
+    $('#showcase').append('<div id="catContainer"><h2>' + coolCats[i].name + '</h2><p>' + coolCats[i].bio + '</p>' + '<img src="' + coolCats[i].image + '"><button class="like-button" id="' + coolCats[i].name + '">♥</button></div>');
 
   }
 }
@@ -68,9 +68,9 @@ function getCoolLikes() {
 //function to clear out likeDiv, then append like data to the DOM
 function appendCoolLikes(coolLikes) {
   $('#likeDiv').empty();
-  $('#likeDiv').append('<p>Emily has '+ coolLikes["Emily"] + ' likes!</p>');
-  $('#likeDiv').append('<p>Chris has '+ coolLikes["Chris"] +' likes!</p>');
-  $('#likeDiv').append('<p>Joe has '+ coolLikes["Joe"] +' likes!</p>');
+  $('#likeDiv').append('<p>Emily has '+ coolLikes["Emily"] + ' ♥!</p>');
+  $('#likeDiv').append('<p>Chris has '+ coolLikes["Chris"] +' ♥!</p>');
+  $('#likeDiv').append('<p>Joe has '+ coolLikes["Joe"] +' ♥!</p>');
 }
 
 });
