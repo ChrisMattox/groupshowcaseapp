@@ -17,6 +17,16 @@ p {
   color: orange;
 }
 
+#catContainer {
+  display: inline-block;
+  margin: 20px;
+  width: 200px;
+}
+
+#catContainer p {
+  height: 40px;
+}
+
 button {
   background-color: magenta;
   height: 60px;
