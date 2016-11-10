@@ -5,9 +5,9 @@ var bodyParser = require('body-parser');
 // array of cooler cats
 var coolLikes =
   {
-    "Emily": 0,
-    "Chris": 0,
-    "Joe": 0
+    Emily: 0,
+    Chris: 0,
+    Joe: 0
 };
 
 router.get('/', function(req, res) {
