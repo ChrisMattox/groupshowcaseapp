@@ -1,7 +1,6 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
-var path = require('path');
 
 // routing modules
 var index = require('./routes/index');
@@ -9,7 +8,7 @@ var bios = require('./routes/bios');
 var likes = require('./routes/likes');
 
 
-// app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // routes
 app.use('/bios', bios);

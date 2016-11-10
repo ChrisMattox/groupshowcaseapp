@@ -1,4 +1,33 @@
+body {
+  text-align: center;
+}
+
+h1{
+  color: teal;
+  font-size: 50px;
+  text-align: center;
+}
+
+h2{
+  color: teal;
+  font-size: 40px;
+}
+
+p {
+  color: orange;
+}
+
+button {
+  background-color: magenta;
+  height: 60px;
+  width: 160px;
+  display: block;
+  margin: 0 auto;
+
+}
+
 img {
   height: 200px;
   width: 200px;
+  flex-direction: row;
 }

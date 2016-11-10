@@ -4,6 +4,10 @@ $(document).ready(function() {
 getCoolCats();
 getCoolLikes();
 
+var cool = {
+  name: ''
+};
+
 function getCoolCats() {
   $.ajax({
     type: 'GET',
@@ -24,26 +28,58 @@ function appendCoolCats(coolCats) {
   }
 }
 
-      $('#showcase').on('click', '.like-button', likeCoolCat);
+$('#showcase').on('click', '.like-button', function (){
 
-function likeCoolCat (coolLikes) {
+  var name = $(this).attr("id");
+  cool.name = name;
+  likeCoolCat(cool);
+});
 
-    var name = $(this).attr("id");
+function likeCoolCat (name) {
+    // var name = $(this).attr("id");
+    // console.log(coolLikes.name);
+    // postRequest();
     console.log(name);
-    coolLikes.name++;
-    console.log(coolLikes.name);
+    $.ajax({
+      type: 'POST',
+      url: '/likes',
+      data: name,
+      success: function(data){
+        console.log(data);
+        // console.log(name);
+        //coolLikes.name++;
+        console.log("sending likes");
+        appendCoolLikes(data);
+      }
+    });
   }
 
 
 
-function getCoolLikes () {
+function getCoolLikes() {
   $.ajax({
     type: 'GET',
     url: '/likes',
     success: function(data) {
       console.log('i like you');
+      appendCoolLikes(data);
     }
   });
+}
+// function postRequest(){
+//   // $.ajax({
+//   //   type: 'POST',
+//   //   url: '/likes',
+//   //   success: function(data){
+//   //     console.log("sending likes");
+//   //   }
+//   // });
+// }
+function appendCoolLikes(coolLikes) {
+  $('#likeDiv').empty();
+  $('#likeDiv').append('<p>Number of likes: '+ coolLikes.Emily +'</p>');
+  $('#likeDiv').append('<p>Number of likes: '+ coolLikes.Chris +'</p>');
+  $('#likeDiv').append('<p>Number of likes: '+ coolLikes.Joe +'</p>');
 }
 
 });
